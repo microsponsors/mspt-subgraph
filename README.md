@@ -5,8 +5,11 @@ Just a simple first pass at spinning up a subgraph via [TheGraph.com](https://th
 Seems like this can be updated later on when TheGraph incorporates [versioning](https://thegraph.com/docs/versioning).
 
 ### Deployment
-Name: `mspt-subgraph`
-Location: `https://thegraph.com/explorer/subgraph/microsponsors/mspt-subgraph`
+```
+$ yarn deploy --access-token <ACCESS TOKEN>
+```
+- Name: `mspt-subgraph`
+- Location: `https://thegraph.com/explorer/subgraph/microsponsors/mspt-subgraph`
 
 ### Explorer/ Playground
 
@@ -14,6 +17,12 @@ Query the subgraph with playground GUI: [https://thegraph.com/explorer/subgraph/
 
 ### API endpoints
 
-Queries (HTTP): `https://api.thegraph.com/subgraphs/name/microsponsors/mspt-subgraph`
+- Queries (HTTP):
+```
+https://api.thegraph.com/subgraphs/name/microsponsors/mspt-subgraph
+```
 
-Subscriptions (WS): `wss://api.thegraph.com/subgraphs/name/microsponsors/mspt-subgraph`
+Subscriptions (WS):
+```
+wss://api.thegraph.com/subgraphs/name/microsponsors/mspt-subgraph
+```
