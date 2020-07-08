@@ -13,7 +13,8 @@ $ yarn deploy --access-token <ACCESS TOKEN>
 
 ### Explorer/ Playground
 
-Query the subgraph with playground GUI: [https://thegraph.com/explorer/subgraph/microsponsors/mspt-subgraph?selected=playground](https://thegraph.com/explorer/subgraph/microsponsors/mspt-subgraph?selected=playground)
+Query the subgraph with playground GUI:
+[https://thegraph.com/explorer/subgraph/microsponsors/mspt-subgraph?selected=playground](https://thegraph.com/explorer/subgraph/microsponsors/mspt-subgraph?selected=playground)
 
 ### API endpoints
 
@@ -22,7 +23,7 @@ Query the subgraph with playground GUI: [https://thegraph.com/explorer/subgraph/
 https://api.thegraph.com/subgraphs/name/microsponsors/mspt-subgraph
 ```
 
-Subscriptions (WS):
+- Subscriptions (WS):
 ```
 wss://api.thegraph.com/subgraphs/name/microsponsors/mspt-subgraph
 ```
