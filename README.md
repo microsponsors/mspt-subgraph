@@ -35,7 +35,7 @@ $ yarn deploy --access-token <ACCESS TOKEN>
 - Location: `https://thegraph.com/explorer/subgraph/microsponsors/mspt-subgraph`
 
 #### Contents
-- `subgraph.yml`: YAML file containing subgraph manifest
+- `subgraph.yaml`: YAML file containing subgraph manifest
 - `schema.graphl`: GraphQL schema that defines what data is stored and how to query it
 - `Assemblyscript Mappings`: AssemblyScript code that translates from the event data in Ethereum to entities defined in your schema (`mappings.ts`)
 
