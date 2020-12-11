@@ -1,6 +1,14 @@
-type ExampleEntity @entity {
+type TransferTimeSlot @entity {
+  "[Tx] -  [card id]"
   id: ID!
-  count: BigInt!
-  from: Bytes! # address
-  to: Bytes! # address
+  "From user"
+  from: User
+  "To user"
+  to: User
 }
+
+type User @entity {
+  "Users ethereum address"
+  id: ID!
+}
+

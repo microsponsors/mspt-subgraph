@@ -22,9 +22,17 @@ wss://api.thegraph.com/subgraphs/name/microsponsors/mspt-subgraph
 ## Develop
 
 #### Dependencies
-install the yarn cli tool on your machine
+Install the yarn cli tool on your machine
 ```
 yarn global add @graphprotocol/graph-cli
+```
+Install dependencies in for this repo
+```
+yarn
+```
+Edit the `schema.graphql` file, then rebuild:
+```
+yarn codegen
 ```
 
 #### Deploy
@@ -33,10 +41,11 @@ $ yarn deploy --access-token <ACCESS TOKEN>
 ```
 - Name: `mspt-subgraph`
 - Location: `https://thegraph.com/explorer/subgraph/microsponsors/mspt-subgraph`
+- Access token can be found in TheGraph.com's profile page
 
 #### Contents
 - `subgraph.yaml`: YAML file containing subgraph manifest
-- `schema.graphl`: GraphQL schema that defines what data is stored and how to query it
+- `schema.graphql`: GraphQL schema that defines what data is stored and how to query it
 - `Assemblyscript Mappings`: AssemblyScript code that translates from the event data in Ethereum to entities defined in your schema (`mappings.ts`)
 
 
