@@ -1,5 +1,5 @@
 type TransferTimeSlot @entity {
-  "[Tx] -  [card id]"
+  "[Tx] -  [token id]"
   id: ID!
   "From user"
   from: User
