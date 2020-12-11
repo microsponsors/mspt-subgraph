@@ -4,7 +4,7 @@ A simple first pass at spinning up a subgraph via [TheGraph.com](https://thegrap
 ## Playground/GUI
 https://thegraph.com/explorer/subgraph/microsponsors/mspt-subgraph
 
-For reference, Axie was a useful subgraph that helped me figure out how to get this working (its also an NFT project):
+For reference, Axie is a useful reference subgraph (also an NFT project):
 https://thegraph.com/explorer/subgraph/heghehog/axie
 
 ## API endpoints
