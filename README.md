@@ -1,9 +1,11 @@
 # MSPT Subgraph
 A simple first pass at spinning up a subgraph via [TheGraph.com](https://thegraph.com). Note that The Graph only supports `events` for now.
 
-## Explorer/ Playground GUI
-Query this subgraph with playground GUI:
-[https://thegraph.com/explorer/subgraph/microsponsors/mspt-subgraph?selected=playground](https://thegraph.com/explorer/subgraph/microsponsors/mspt-subgraph?selected=playground)
+## Playground/GUI
+https://thegraph.com/explorer/subgraph/microsponsors/mspt-subgraph
+
+For reference, Axie was a useful subgraph that helped me figure out how to get this working (its also an NFT project):
+https://thegraph.com/explorer/subgraph/heghehog/axie
 
 ## API endpoints
 - Queries (HTTP):
@@ -33,6 +35,11 @@ Authorize your access token (can be found on your profile page on TheGraph.com)
 graph auth https://api.thegraph.com/deploy/ <your access token>
 ```
 
+#### Contents of interest
+- `subgraph.yaml`: YAML file containing subgraph manifest
+- `schema.graphql`: GraphQL schema that defines what data is stored and how to query it
+- `src/mappings.ts`: AssemblyScript code that translates from the event data in Ethereum to entities defined in your schema (the glue)
+
 #### Edit
 Edit the `schema.graphql`, `subgraph.yaml` or `src/mapping.ts` file(s), then build & generate code:
 ```
@@ -47,9 +54,5 @@ $ graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegra
 ```
 - Name: `mspt-subgraph`
 - Location: `https://thegraph.com/explorer/subgraph/microsponsors/mspt-subgraph`
-- Access token can be found in TheGraph.com's profile page
+- Your access token can be found in TheGraph.com's profile page
 
-#### Contents of interest
-- `subgraph.yaml`: YAML file containing subgraph manifest
-- `schema.graphql`: GraphQL schema that defines what data is stored and how to query it
-- `src/mappings.ts`: AssemblyScript code that translates from the event data in Ethereum to entities defined in your schema (the glue)
