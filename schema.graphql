@@ -1,14 +1,8 @@
 type TransferTimeSlot @entity {
-  "[Tx] -  [token id]"
+  "transaction hash"
   id: ID!
-  "From user"
-  from: User
-  "To user"
-  to: User
-}
-
-type User @entity {
-  "Users ethereum address"
-  id: ID!
+  from: Bytes!
+  to: Bytes!
+  tokenId: BigInt
 }
 

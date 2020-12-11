@@ -10,12 +10,12 @@ import { TransferTimeSlot } from "../generated/schema"
 export function handleTransfer(event: Transfer): void {
   // Entities can be loaded from the store using a string ID; this ID
   // needs to be unique across all entities of the same type
-  let entity = TransferTimeSlot.load(event.transaction.from.toHex())
+  let entity = TransferTimeSlot.load(event.transaction.hash.toHex())
 
   // Entities only exist after they have been saved to the store;
   // `null` checks allow to create entities on demand
   if (entity == null) {
-    entity = new TransferTimeSlot(event.transaction.from.toHex())
+    entity = new TransferTimeSlot(event.transaction.hash.toHex())
 
     // Entity fields can be set using simple assignments
     // entity.count = BigInt.fromI32(0)
@@ -25,8 +25,9 @@ export function handleTransfer(event: Transfer): void {
   // entity.count = entity.count + BigInt.fromI32(1)
 
   // Entity fields can be set based on event parameters
-  // entity.from = event.params.from
-  // entity.to = event.params.to
+  entity.from = event.params.from
+  entity.to = event.params.to
+  entity.tokenId = event.params.tokenId
 
   // Entities can be written to the store with `.save()`
   entity.save()

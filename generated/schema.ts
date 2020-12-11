@@ -42,68 +42,54 @@ export class TransferTimeSlot extends Entity {
     this.set("id", Value.fromString(value));
   }
 
-  get from(): string | null {
+  get from(): Bytes | null {
     let value = this.get("from");
     if (value === null) {
       return null;
     } else {
-      return value.toString();
+      return value.toBytes();
     }
   }
 
-  set from(value: string | null) {
+  set from(value: Bytes | null) {
     if (value === null) {
       this.unset("from");
     } else {
-      this.set("from", Value.fromString(value as string));
+      this.set("from", Value.fromBytes(value as Bytes));
     }
   }
 
-  get to(): string | null {
+  get to(): Bytes | null {
     let value = this.get("to");
     if (value === null) {
       return null;
     } else {
-      return value.toString();
+      return value.toBytes();
     }
   }
 
-  set to(value: string | null) {
+  set to(value: Bytes | null) {
     if (value === null) {
       this.unset("to");
     } else {
-      this.set("to", Value.fromString(value as string));
+      this.set("to", Value.fromBytes(value as Bytes));
     }
   }
-}
 
-export class User extends Entity {
-  constructor(id: string) {
-    super();
-    this.set("id", Value.fromString(id));
+  get tokenId(): BigInt | null {
+    let value = this.get("tokenId");
+    if (value === null) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
   }
 
-  save(): void {
-    let id = this.get("id");
-    assert(id !== null, "Cannot save User entity without an ID");
-    assert(
-      id.kind == ValueKind.STRING,
-      "Cannot save User entity with non-string ID. " +
-        'Considering using .toHex() to convert the "id" to a string.'
-    );
-    store.set("User", id.toString(), this);
-  }
-
-  static load(id: string): User | null {
-    return store.get("User", id) as User | null;
-  }
-
-  get id(): string {
-    let value = this.get("id");
-    return value.toString();
-  }
-
-  set id(value: string) {
-    this.set("id", Value.fromString(value));
+  set tokenId(value: BigInt | null) {
+    if (value === null) {
+      this.unset("tokenId");
+    } else {
+      this.set("tokenId", Value.fromBigInt(value as BigInt));
+    }
   }
 }

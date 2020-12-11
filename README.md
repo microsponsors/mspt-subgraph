@@ -30,14 +30,23 @@ Install dependencies in for this repo
 ```
 yarn
 ```
-Edit the `schema.graphql` file, then rebuild:
+
+#### Auth
+Authorize your access token (can be found on your profile page on TheGraph.com)
 ```
+graph auth https://api.thegraph.com/deploy/ <your access token>
+```
+#### Edit
+Edit the `schema.graphql` and/or `src/mapping.ts` file(s), then rebuild & generate code:
+```
+yarn build
 yarn codegen
 ```
 
 #### Deploy
+Use the command below instead of `yarn deploy`:
 ```
-$ yarn deploy --access-token <ACCESS TOKEN>
+$ graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ microsponsors/mspt-subgraph --access-token <use access token auth'd above>
 ```
 - Name: `mspt-subgraph`
 - Location: `https://thegraph.com/explorer/subgraph/microsponsors/mspt-subgraph`
